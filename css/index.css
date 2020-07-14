@@ -1,3 +1,7 @@
+body {
+  background-image: linear-gradient(45deg, #1b1b1b, grey);
+}
+
 @-webkit-keyframes apearcer {
   0% {
     opacity: 0;
@@ -75,7 +79,8 @@
   width: 120px;
   -webkit-clip-path: circle(50% at 50% 50%);
           clip-path: circle(50% at 50% 50%);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 .background {
@@ -89,6 +94,7 @@
   -webkit-animation: apearcer2 1s ease-in-out;
           animation: apearcer2 1s ease-in-out;
   padding: 20px;
+  color: white;
 }
 
 h3 {
@@ -96,30 +102,41 @@ h3 {
           animation: apearcer3 1s ease-in-out;
   font-family: "montserrat" !important;
   letter-spacing: 2px;
+  font-weight: 200 !important;
+  color: white;
+}
+
+h6 {
+  -webkit-animation: apearcer3 1s ease-in-out;
+          animation: apearcer3 1s ease-in-out;
+  font-family: "montserrat" !important;
+  letter-spacing: 2px;
+  font-weight: 50 !important;
+  color: darkgray;
 }
 
 .line::after {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   content: "";
-  height: 2px;
-  background-color: black;
+  height: 5px;
+  background-color: white;
   -webkit-animation: line 1s ease-in-out;
           animation: line 1s ease-in-out;
-  width: 150px;
 }
 
 .line::before {
-  position: absolute;
+  bottom: 0;
+  position: fixed;
   content: "";
-  height: 2px;
+  height: 5px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transform-origin: left;
           transform-origin: left;
-  background-color: black;
+  background-color: white;
   -webkit-animation: line 1s ease-in-out;
           animation: line 1s ease-in-out;
-  width: 150px;
 }
 
 @-webkit-keyframes line {
@@ -127,7 +144,7 @@ h3 {
     width: 0;
   }
   to {
-    width: 150px;
+    width: 100vw;
   }
 }
 
@@ -136,6 +153,6 @@ h3 {
     width: 0;
   }
   to {
-    width: 150px;
+    width: 100vw;
   }
 }
