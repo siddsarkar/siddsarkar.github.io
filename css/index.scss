@@ -30,13 +30,25 @@ body {
   }
 }
 
+i:hover {
+  color: lightskyblue;
+}
+#footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  color: grey;
+  font-size: small;
+  font-style: italic;
+  opacity: 0.5;
+}
 .profile-avatar {
   animation: apearcer 1s ease-in-out;
   height: 120px;
   width: 120px;
-  clip-path: circle(50% at 50% 50%);
+  border-radius: 60px;
   margin-bottom: 20px;
-  border-radius: 50%;
 }
 
 .background {
@@ -48,6 +60,7 @@ body {
 .fa {
   margin-top: 2rem;
   font-size: 2rem !important;
+  font-weight: 700;
   //   color: white;
   animation: apearcer2 1s ease-in-out;
   padding: 20px;
@@ -56,7 +69,7 @@ body {
 h3 {
   animation: apearcer3 1s ease-in-out;
   font-family: "montserrat" !important;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-weight: 200 !important;
   color: white;
 
@@ -99,5 +112,80 @@ h6 {
   }
   to {
     width: 100vw;
+  }
+}
+
+//preloader
+
+.loading-screen {
+  z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #1b1b1b;
+  background-color: #1b1b1b;
+
+  .ripple-full {
+    // color: #1b1b1b;
+    // background: gray;
+    display: flex;
+    height: 24px;
+    width: 96px;
+    justify-content: space-around;
+    align-items: center;
+
+    .ripple {
+      // background: #4285f4;
+      background: gray;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      animation: ripple-load 1s ease-in-out 500ms infinite alternate;
+    }
+
+    .ripple2 {
+      // background: #db4437;
+      background: gray;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      animation: ripple-load 1s ease-in-out 250ms infinite alternate;
+    }
+
+    .ripple3 {
+      // background: #f4b400;
+      background: gray;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      animation: ripple-load 1s ease-in-out 150ms infinite alternate;
+    }
+
+    .ripple4 {
+      // background: #0f9d58;
+      background: gray;
+
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      animation: ripple-load 1s ease-in-out 50ms infinite alternate;
+    }
+
+    @keyframes ripple-load {
+      0% {
+        transform: scaleX(0, 0);
+      }
+      50% {
+        transform: scale(3, 3);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
   }
 }

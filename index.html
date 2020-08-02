@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/index.min.css" />
     <link rel="stylesheet" href="/res/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/res/bootstrap/dist/css/bootstrap.min.css" />
     <script src="/res/jquery/dist/jquery.min.js"></script>
@@ -10,34 +10,53 @@
     <title>Siddhartha Sarkar</title>
   </head>
   <body>
+    <div id="root" class="loading-screen">
+      <div class="ripple-full">
+        <div class="ripple"></div>
+        <div class="ripple2"></div>
+        <div class="ripple3"></div>
+        <div class="ripple4"></div>
+      </div>
+    </div>
     <div
       class="background container-fluid flex-column d-flex justify-content-center align-items-center"
     >
       <div class="line"></div>
       <img
-        class="profile-avatar card shadow"
+        class="profile-avatar shadow"
         src="https://avatars2.githubusercontent.com/u/48653419?s=400&u=de63651a8309fbe6d98fb7b3d0d131bc791944c0&v=4"
         alt="profile-pic"
       />
       <h3 class="name">Siddhartha Sarkar</h3>
       <h6>
-        WEB DEVELOPER
+        React-Native / ReactJS
       </h6>
 
       <div class="row w-25 justify-content-around">
-        <a href="https://facebook.com/sidking791"
+        <a href="https://facebook.com/sidking791" target="_blank"
           ><i class="fa fa-facebook" aria-hidden="true"></i
         ></a>
-        <a href="https://twitter.com/ssarkar791"
+        <a href="https://twitter.com/ssarkar791" target="_blank"
           ><i class="fa fa-twitter" aria-hidden="true"></i
         ></a>
-        <a href="https://github.com/siddsarkar"
+        <a href="https://github.com/siddsarkar" target="_blank"
           ><i class="fa fa-github" aria-hidden="true"></i
         ></a>
-        <a href="https://deviantart.com/sidking791"
+        <a href="https://deviantart.com/sidking791" target="_blank"
           ><i class="fa fa-deviantart" aria-hidden="true"></i
         ></a>
       </div>
     </div>
+    <div id="footer">
+      Please visit my
+      <a
+        style="text-decoration: none; color: lightblue; opacity: 0.7;"
+        href="https://github.com/siddsarkar"
+        target="_blank"
+        >github</a
+      >
+      profile to see my recent projects
+    </div>
+    <script src="js/index.js"></script>
   </body>
 </html>
