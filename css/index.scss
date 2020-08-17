@@ -3,12 +3,15 @@ body {
   background: #f5f5f5;
   font-family: "Montserrat" !important;
 }
+.toogletext {
+  content: "eeeeee" !important;
+}
 .darktheme {
   background: black;
   #footer {
     color: blanchedalmond !important;
     a {
-      color: lightcoral !important;
+      color: lightgreen !important;
     }
   }
   .fa-github {
@@ -57,7 +60,7 @@ i:hover {
   color: grey;
   font-size: small;
   font-style: italic;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .profile-avatar {
   // animation: apearcer 1s ease-in-out;
@@ -78,6 +81,7 @@ i:hover {
 }
 
 .fa {
+  visibility: hidden;
   margin-top: 2rem;
   font-size: 2rem !important;
   font-weight: 700;
@@ -116,7 +120,7 @@ h6 {
   // width: 100vw;
   content: "";
   height: 5px;
-  background-color: white;
+  background-color: #00acee;
   animation: line 1s ease-in-out;
 }
 
@@ -128,7 +132,7 @@ h6 {
   height: 5px;
   transform: rotate(180deg);
   transform-origin: left;
-  background-color: white;
+  background-color: #05cc46;
   animation: line 1s ease-in-out;
 }
 
