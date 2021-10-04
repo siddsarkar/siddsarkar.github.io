@@ -1,35 +1,72 @@
-const avatar = document.querySelector(".profile-avatar");
-const pic = document.querySelector("#avatar");
-const line = document.querySelector("#line-load");
-const icons = document.getElementsByClassName("fa");
-const name = document.getElementsByClassName("name");
-const foo = document.getElementById("footer");
+let toggleBtn = document.getElementById('theme-toggle')
+
+;(function () {
+	var storageKey = 'dark'
+	var classNameDark = 'dark'
+	var classNameLight = 'light'
+	var d = document.querySelector('body')
+	//set class on html doc
+	function setClassOnDocumentBody(dark) {
+		d.classList.add(dark ? classNameDark : classNameLight)
+		d.classList.remove(dark ? classNameLight : classNameDark)
+	}
+	//media query
+	var preferDarkQuery = '(prefers-color-scheme: dark)'
+	var mql = window.matchMedia(preferDarkQuery)
+	var supportsColorSchemeQuery = mql.media === preferDarkQuery
+	//log media query result
+	console.log(
+		'[Initialization] supportsColorSchemeQuery:%s and prefersDark:%s',
+		supportsColorSchemeQuery,
+		mql.matches
+	)
+
+	//local storage
+	var localStorageTheme = null
+	try {
+		localStorageTheme = localStorage.getItem(storageKey)
+	} catch (err) {}
+	var localStorageExists = localStorageTheme !== null
+	//log local storage result
+	console.log(
+		'[Initialization] localStorageExists:%s and localStorageDark:%s',
+		localStorageExists,
+		JSON.parse(localStorageTheme)
+	)
+	// if localStorage Exists update the value of localStorageTheme
+	if (localStorageExists) {
+		localStorageTheme = JSON.parse(localStorageTheme)
+	}
+	if (localStorageExists) {
+		setClassOnDocumentBody(localStorageTheme)
+		toggleBtn.checked = localStorageTheme
+		console.log('Setting theme from Local Storage')
+	} else if (supportsColorSchemeQuery) {
+		setClassOnDocumentBody(mql.matches) //added to remove flicker
+		toggleBtn.checked = mql.matches
+		console.log('Setting theme from Media Query')
+		localStorage.setItem(storageKey, mql.matches)
+	} else {
+		var isDarkMode = d.classList.contains(classNameDark)
+		localStorage.setItem(storageKey, JSON.stringify(isDarkMode))
+		console.log('Setting theme from class')
+	}
+})()
 
 document.onreadystatechange = function () {
-  setInterval(() => {
-    foo.classList.toggle("toogletext");
-  }, 1000);
-  if (document.readyState == "complete") {
-    setTimeout(() => {
-      const ele = document.getElementById("root");
-      ele.classList.remove("loading-screen");
-      line.classList.add("line");
-      avatar.setAttribute("style", "animation: apearcer 1s ease-in-out");
+	if (document.readyState == 'complete') {
+		setTimeout(() => {
+			const ele = document.getElementById('root')
+			ele.classList.remove('loading-screen')
+		}, 1000)
+	}
+}
 
-      for (let i = 0; i < icons.length; i++) {
-        icons[i].setAttribute(
-          "style",
-          "animation: apearcer2 1s ease-in-out;visibility:visible"
-        );
-      }
-
-      for (let j = 0; j < name.length; j++) {
-        name[j].classList.add("text-fade");
-      }
-    }, 1000);
-  }
-};
-
-pic.onclick = () => {
-  document.body.classList.toggle("darktheme");
-};
+function toggleTheme() {
+	if (document.body.classList.contains('dark')) {
+		localStorage.setItem('dark', false)
+	} else {
+		localStorage.setItem('dark', true)
+	}
+	document.body.classList.toggle('dark')
+}

@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<link rel="stylesheet" href="css/index.min.css" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Siddharth's Portfolio</title>
+	</head>
 
-<head>
-  <link rel="stylesheet" href="/css/index.min.css" />
-  <link rel="stylesheet" href="/res/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="/res/bootstrap/dist/css/bootstrap.min.css" />
-  <script src="/res/jquery/dist/jquery.min.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siddhartha Sarkar</title>
-</head>
+	<body class="dark">
+		<div id="root" class="loading-screen">
+			<div class="ripple-full">
+				<div class="ripple"></div>
+				<div class="ripple2"></div>
+				<div class="ripple3"></div>
+				<div class="ripple4"></div>
+			</div>
+		</div>
+		<label class="switch">
+			<input id="theme-toggle" type="checkbox" onchange="toggleTheme()" />
+			<div>
+				<span></span>
+			</div>
+		</label>
 
-<body>
-  <div id="root" class="loading-screen">
-    <div class="ripple-full">
-      <div class="ripple"></div>
-      <div class="ripple2"></div>
-      <div class="ripple3"></div>
-      <div class="ripple4"></div>
-    </div>
-  </div>
-  <div class=" background container-fluid flex-column d-flex justify-content-center align-items-center">
-    <div id="line-load"></div>
-    <!-- src="https://avatars2.githubusercontent.com/u/48653419?s=400&u=de63651a8309fbe6d98fb7b3d0d131bc791944c0&v=4" -->
-    <img id="avatar" class="profile-avatar shadow-sm" alt="profile-pic" src="./assets/images/profile.jpg" />
-    <h3 class="name text-primary">Siddhartha Sarkar</h3>
-    <h6 class="name text-secondary">
-      react-native / reactjs
-    </h6>
+		<div class="bg">
+			<div class="bg-text js">JS</div>
+		</div>
 
-    <div class="row w-25 justify-content-around">
-      <a href="https://facebook.com/sidking791" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="https://twitter.com/ssarkar791" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href="https://github.com/siddsarkar" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-      <a href="https://deviantart.com/sidking791" target="_blank"><i class="fa fa-deviantart"
-          aria-hidden="true"></i></a>
-    </div>
-  </div>
-  <div id="footer" class="text-body">
-    Please visit my
-    <a style="text-decoration: none; color: #3E2C00 " class="text-danger" href="https://github.com/siddsarkar"
-      target="_blank">github</a>
-    profile to see my recent projects
-  </div>
-  <script src="js/index.js"></script>
-  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
-</body>
+		<div class="container">
+			<div class="user">
+				<div class="user-icon">
+					<img src="assets/images/profile.jpg" alt="user_icon" />
+				</div>
+				<div class="user-name">Siddhartha Sarkar</div>
+				<a href="mailto:siddsarkar@outlook.com">
+					<div class="user-email">siddsarkar@outlook.com</div>
+				</a>
 
+				<div class="social">
+					<a href="https://github.com/siddsarkar" target="_blank">
+						<div class="social-icon">
+							<svg>
+								<use href="assets/defs.svg#github"></use>
+							</svg>
+						</div>
+					</a>
+					<a href="https://facebook.com/sidking791" target="_blank">
+						<div class="social-icon">
+							<svg>
+								<use href="assets/defs.svg#facebook"></use>
+							</svg>
+						</div>
+					</a>
+					<a href="https://deviantart.com/sidking791" target="_blank">
+						<div class="social-icon">
+							<svg>
+								<use href="assets/defs.svg#deviantart"></use>
+							</svg>
+						</div>
+					</a>
+					<a href="https://twitter.com/ssarkar791" target="_blank">
+						<div class="social-icon">
+							<svg>
+								<use href="assets/defs.svg#twitter"></use>
+							</svg>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/index.js"></script>
+	</body>
 </html>

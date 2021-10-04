@@ -1,0 +1,15 @@
+.center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow-10 {
+  box-shadow: 0 1px 4px rgba(12, 12, 13, 0.1);
+}
+.shadow-20 {
+  box-shadow: 0 2px 8px rgba(12, 12, 13, 0.1);
+}
+.shadow-30 {
+  box-shadow: 0 4px 16px rgba(12, 12, 13, 0.1);
+}
